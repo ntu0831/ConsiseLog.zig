@@ -6,7 +6,7 @@ A customizable logging library for Zig with a zero-allocation hot path.
 
 - **0 dependencies**: Only the Zig standard library
 - **0 allocation**: Memory is preallocated only during init in async or concurrent mode
-- **libc-free**: Only the .initLocalTimeByHelper function depends on libc
+- **libc-free**: Only the `.initLocalTimeByHelper` function depends on libc
   > Use .initLocalTimeByHelper to get the local time zone. Alternatively, you can use a third-party library to configure the local time zone.
 - **Large records.** A record can span multiple pool blocks in async/concurrent mode 
 - **Drop-in `std.log` support**: `ConsiseLog.helper.logfn` replace `std.Options.logFn`, `ConsiseLog.Log` replace `std.log.scoped`
@@ -183,4 +183,4 @@ zig build docs
 
 ### Online
 
-See the API Documentation.
+See the [API Documentation](https://ntu0831.github.io/ConsiseLog.zig).
