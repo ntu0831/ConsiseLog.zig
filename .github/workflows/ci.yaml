@@ -3,7 +3,6 @@ name: ci
 on:
   workflow_dispatch:
 
-
 jobs:
   test:
     strategy:
@@ -16,8 +15,8 @@ jobs:
         with:
           version: 0.17.0
       - run: zig build test --summary all
+      - run: zig build examples
       - run: zig build run
-        working-directory: example
 
   fmt:
     runs-on: ubuntu-latest
