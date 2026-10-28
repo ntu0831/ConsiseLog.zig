@@ -18,7 +18,8 @@ pub fn main(init: std.process.Init) !void {
         return;
     }
 
-    var iter = args.iterate();
+    var iter = try args.iterateAllocator(init.gpa);
+    defer iter.deinit();
     _ = iter.next();
 
     while (iter.next()) |name| {
