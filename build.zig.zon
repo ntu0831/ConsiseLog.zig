@@ -1,0 +1,11 @@
+.{
+    .name = .consiselog,
+    .version = "0.1.0",
+    .fingerprint = 0xaf6e9324bbec8f6c,
+    .minimum_zig_version = "0.17.0",
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
