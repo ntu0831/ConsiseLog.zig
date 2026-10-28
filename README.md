@@ -20,7 +20,7 @@ A customizable logging library for Zig with a zero-allocation hot path.
 Requires Zig **0.17.0** 
 
 ```sh
-zig fetch --save git+https://github.com/ntu0831/ConsiseLog.zig.git#v0.1.0
+zig fetch --save git+https://github.com/ntu0831/ConsiseLog.zig.git#v0.1.1
 ```
 
 Then add the module in `build.zig`:
