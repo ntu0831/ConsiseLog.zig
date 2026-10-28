@@ -62,13 +62,19 @@ fn addCommand(b: *std.Build, ctx: *Context) !void {
 }
 
 fn addModule(b: *std.Build, ctx: *Context) !void {
-    const mod = b.addModule(consiselog, .{
+    ctx.mod = b.addModule(consiselog, .{
         .root_source_file = b.path("src/root.zig"),
         .target = ctx.target,
         .optimize = ctx.optimize,
     });
-    ctx.mod_test = b.addTest(.{ .root_module = mod });
-    ctx.mod = mod;
+    ctx.mod_test = b.addTest(.{
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("src/root.zig"),
+            .target = ctx.target,
+            .optimize = ctx.optimize,
+            .link_libc = true,
+        }),
+    });
 }
 
 fn addExamples(b: *std.Build, ctx: *Context) !void {
